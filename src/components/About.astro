@@ -1,0 +1,45 @@
+---
+import Lottie from 'lottie-react';
+import Button from '../components/interface/Button.astro';
+import benefits from '@/constants/benefits';
+import working from '../assets/working.json';
+---
+
+<section class="h-screen w-full">
+  <div class="w-full h-auto grid grid-cols-3 grid-rows-2 gap-8">
+    <div
+      class="col-span-3 h-[32rem] bg-seasalt rounded-2xl flex justify-evenly items-center shadow"
+    >
+      <Lottie
+        client:only="react"
+        animationData={working}
+        className="w-[28rem] h-[28rem]"
+      />
+      <div class="w-[22rem] mx-6 flex flex-col gap-5">
+        <p class="text-5xl font-calistoga">
+          Running your own business is
+          <span class="text-gradient"> tough enough</span>
+        </p>
+        <p class="mb-6 w-80">
+          Thats why Majic wants to provide a one stop shop for businesses who
+          need worry-free web design & development services at a fair rate.
+        </p>
+        <Button styles="w-[21rem]">Get a free quote</Button>
+      </div>
+    </div>
+    {
+      benefits.map((item, idx) => (
+        <div class="flex flex-col items-center justify-center p-14 bg-seasalt rounded-2xl h-[30rem] shadow text-center">
+          <img src={item.icon} alt={item.alt} class="w-60 h-24" />
+          <div>
+            <p class="mt-10 mb-6 text-4xl text-text font-calistoga">
+              <span class="text-gradient">{item.topText}</span>
+              <span class="whitespace-nowrap">{item.bottomText}</span>
+            </p>
+            <p class="h-24 text-text">{item.content}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

@@ -1,0 +1,32 @@
+---
+import '@fontsource/inter';
+import '@fontsource/calistoga';
+import '@/styles/global.css';
+import { Header } from '@/components';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.ico" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Majic Web Design</title>
+    <meta
+      name="description"
+      content="We help local business find new customers online and grow their business through stand-out websites & videos."
+    />
+    <meta property="og:title" content="Majic Web Design" />
+    <meta
+      property="og:description"
+      content="We help local business find new customers online and grow their business through stand-out websites & videos."
+    />
+    <meta property="og:image" content="/images/logo-svg.svg" />
+  </head>
+  <body class="h-[500rem] text-text selection:bg-purp selection:text-text">
+    <div class="main-container px-6 mx-auto h-full flex flex-col items-center">
+      <Header client:only="solid-js" />
+      <slot />
+    </div>
+  </body>
+</html>

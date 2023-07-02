@@ -1,0 +1,29 @@
+---
+import Lottie from 'lottie-react';
+import Button from '../components/interface/Button.astro';
+import scrollDown from '../assets/scrollDown.json';
+---
+
+<section
+  class="w-full min-h-[78vh] flex flex-col items-center justify-center animate-in fade-in duration-700"
+>
+  <h2 class="font-calistoga text-7xl text-center mb-8">
+    We build beautiful websites for great businesses like <span
+      class="text-gradient">yours</span
+    >
+  </h2>
+  <p class="max-w-[28rem] text-center text-lg mb-20">
+    We help local business find new customers online and grow their business
+    through stand-out websites & videos. Reach out today and get a free quote.
+  </p>
+  <Button>Get a free quote</Button>
+  <!-- <div
+    class="flex items-center justify-center w-8 h-10 rounded-full bg-primary-gradient"
+  >
+    <Lottie
+      client:only="react"
+      animationData={scrollDown}
+      className="w-8 h-12"
+    />
+  </div> -->
+</section>
